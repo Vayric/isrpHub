@@ -9,28 +9,22 @@ html, body {
 }
 
 body {
+  position: relative;
   font-family: 'Roboto', sans-serif;
   background: var(--main-bg);
   color: white;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-}
-
-.page-container {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .hero {
-  flex: 1;
-  padding: 100px 20px 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 80px 20px 120px;
+  max-width: 800px;
 }
 
 h1 {
@@ -44,8 +38,7 @@ h1 {
 
 p.description {
   font-size: 1.3em;
-  max-width: 700px;
-  margin: 0 auto 40px;
+  margin-bottom: 40px;
   opacity: 0;
   transform: translateY(30px);
   transition: all 1s ease 0.2s;
@@ -78,11 +71,15 @@ p.description {
 }
 
 footer {
-  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
   background-color: rgba(0, 0, 0, 0.3);
   font-style: italic;
   font-family: 'Playfair Display', serif;
   font-size: 0.95em;
+  text-align: center;
   opacity: 0;
   transform: translateY(30px);
   transition: all 1s ease 0.6s;
@@ -92,4 +89,3 @@ footer {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
-
