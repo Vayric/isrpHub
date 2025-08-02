@@ -198,3 +198,8 @@ footer {
 .offense.ban {
   background-color: crimson;
 }
+
+.offense.N/A {
+  background-color: #2c2f33;
+  color: white; /* optional, makes sure text is readable */
+}
