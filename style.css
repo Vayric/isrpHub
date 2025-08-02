@@ -198,22 +198,3 @@ footer {
 .offense.ban {
   background-color: crimson;
 }
-
-/* Custom scrollbar for modern browsers */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1c1c1c; /* Dark gray background */
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #444;  /* Darker scroll handle */
-  border-radius: 6px;
-  border: 2px solid #1c1c1c; /* Matches track */
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #666;  /* Slightly lighter on hover */
-}
