@@ -25,23 +25,34 @@
   padding: 100px 30px 150px;
   max-width: 900px;
   margin: auto;
+  text-align: left;
   font-size: 1.1em;
   line-height: 1.6;
+  color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
 .rules-page h1 {
   font-size: 3em;
   margin-bottom: 20px;
   font-family: 'Playfair Display', serif;
+  text-align: center;
 }
 
 .rules-page .intro {
   margin-bottom: 40px;
   font-style: italic;
+  text-align: center;
 }
 
 .rule {
   margin-bottom: 50px;
   border-left: 4px solid white;
   padding-left: 20px;
+}
+
+.rule h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
