@@ -7,11 +7,18 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
   <style>
+    body {
+      margin: 0;
+      background-color: #121212;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+    }
+
     .rules-section {
       display: flex;
       overflow-x: auto;
       gap: 20px;
-      padding: 40px;
+      padding: 100px 40px 40px 40px;
       scroll-snap-type: x mandatory;
     }
 
@@ -33,6 +40,7 @@
 
     .warn {
       background-color: #ffc107;
+      color: #000;
     }
 
     .kick {
@@ -62,10 +70,15 @@
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       transition: background 0.3s;
+      z-index: 1000;
     }
 
     .back-button:hover {
       background-color: #d32f2f;
+    }
+
+    .rule-box p {
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -74,16 +87,76 @@
 
   <div class="rules-section">
     <div class="rule-box warn">
-      <h3>1st Offense - Warning</h3>
-      <p>Examples of warnings are, RDM, VDM, FRP..</p>
+      <h3>Fail Roleplay (FRP)</h3>
+      <p>1st Offense: Warning</p>
+      <p>2nd Offense: Kick (30 mins)</p>
+      <p>3rd Offense: Ban (1 Day)</p>
+    </div>
+    <div class="rule-box warn">
+      <h3>RDM (Random Deathmatch)</h3>
+      <p>1st Offense: Warning</p>
+      <p>2nd Offense: Kick (30 mins)</p>
+      <p>3rd Offense: Ban (2 Days)</p>
+    </div>
+    <div class="rule-box warn">
+      <h3>Combat Logging</h3>
+      <p>1st Offense: Warning</p>
+      <p>2nd Offense: Kick</p>
+      <p>3rd Offense: Ban (1 Day)</p>
+    </div>
+    <div class="rule-box warn">
+      <h3>Cop Baiting</h3>
+      <p>1st Offense: Warning</p>
+      <p>2nd Offense: Kick</p>
+      <p>3rd Offense: Ban (1 Day)</p>
+    </div>
+    <div class="rule-box warn">
+      <h3>Breaking Character</h3>
+      <p>1st Offense: Warning</p>
+      <p>2nd Offense: Kick</p>
+      <p>3rd Offense: Ban (1 Day)</p>
+    </div>
+    <div class="rule-box warn">
+      <h3>FearRP</h3>
+      <p>1st Offense: Warning</p>
+      <p>2nd Offense: Kick</p>
+      <p>3rd Offense: Ban (1 Day)</p>
+    </div>
+    <div class="rule-box warn">
+      <h3>Metagaming</h3>
+      <p>1st Offense: Warning</p>
+      <p>2nd Offense: Kick</p>
+      <p>3rd Offense: Ban (1 Day)</p>
     </div>
     <div class="rule-box kick">
-      <h3>2nd Offense - Kick (30 Minutes)</h3>
-      <p>Examples of kicks are, RDM+VDM, FRP+RDM.</p>
+      <h3>Staff Disrespect</h3>
+      <p>1st Offense: Warning</p>
+      <p>2nd Offense: Kick</p>
+      <p>3rd Offense: Ban (2 Days)</p>
     </div>
     <div class="rule-box ban">
-      <h3>3rd Offense - Ban</h3>
-      <p>Examples of bans would be, Staff RDM+Staff VDM.</p>
+      <h3>Glitching or Exploiting</h3>
+      <p>1st Offense: Warning</p>
+      <p>2nd Offense: Kick</p>
+      <p>3rd Offense: Ban (Permanent)</p>
+    </div>
+    <div class="rule-box ban">
+      <h3>Using Unauthorized Mods</h3>
+      <p>1st Offense: Warning</p>
+      <p>2nd Offense: Kick</p>
+      <p>3rd Offense: Ban (Permanent)</p>
+    </div>
+    <div class="rule-box kick">
+      <h3>Disrespecting Other Players</h3>
+      <p>1st Offense: Warning</p>
+      <p>2nd Offense: Kick</p>
+      <p>3rd Offense: Ban (2 Days)</p>
+    </div>
+    <div class="rule-box kick">
+      <h3>Spamming Chat or Mic</h3>
+      <p>1st Offense: Warning</p>
+      <p>2nd Offense: Kick</p>
+      <p>3rd Offense: Ban (1 Day)</p>
     </div>
   </div>
 </body>
