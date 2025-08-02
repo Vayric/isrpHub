@@ -1,154 +1,87 @@
-:root {
-  --main-bg: linear-gradient(to bottom, #7b2cbf, #5a1fa1, #3d156d, #1e0632);
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-  color: white;
-  overflow-x: hidden;
-}
-
-body {
-  background: var(--main-bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
-}
-
-.hero {
-  padding: 80px 20px 120px;
-  max-width: 800px;
-}
-
-h1 {
-  font-size: 3.5em;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease;
-}
-
-p.description {
-  font-size: 1.3em;
-  margin-bottom: 40px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease 0.2s;
-}
-
-.button-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease 0.4s;
-}
-
-.button-container a {
-  background: white;
-  color: #7b2cbf;
-  padding: 15px 25px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s, transform 0.2s;
-}
-
-.button-container a:hover {
-  background: #e5d4ff;
-  transform: scale(1.05);
-}
-
-footer {
-  width: 100%;
-  padding: 20px 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  font-style: italic;
-  font-family: 'Playfair Display', serif;
-  font-size: 0.95em;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease 0.6s;
-}
-
-.fade-in.visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-/* RULES PAGE STYLES */
 .rules-page {
-  background: linear-gradient(to right, #3a0ca3, #7209b7);
+  background: var(--main-bg);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  padding: 40px 20px;
+  min-height: 100vh;
+  overflow-x: auto;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.back-to-home {
+  background: red;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+
+.back-to-home:hover {
+  background: #cc0000;
 }
 
 header {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 20px;
-  text-align: center;
   font-family: 'Playfair Display', serif;
   font-size: 2.5em;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.rules-container {
+.rules-container-horizontal {
   display: flex;
+  gap: 30px;
   overflow-x: auto;
-  padding: 20px;
-  gap: 20px;
+  padding-bottom: 40px;
 }
 
 .rule-card {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 2px solid white;
   border-radius: 15px;
+  min-width: 280px;
   padding: 20px;
-  min-width: 300px;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .rule-card h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4em;
+  font-size: 1.5em;
   margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
 }
 
 .rule-card p {
-  font-size: 0.95em;
+  font-size: 1em;
+  margin-bottom: 20px;
 }
 
-.rule-card table {
-  width: 100%;
-  margin-top: 10px;
-  border-collapse: collapse;
-}
-
-.rule-card th, .rule-card td {
-  border: 1px solid white;
-  padding: 5px;
-  text-align: center;
-  font-size: 0.9em;
-}
-
-.back-button {
-  display: block;
-  margin: 30px auto;
-  padding: 10px 20px;
-  background: white;
-  color: #7b2cbf;
-  text-decoration: none;
-  border-radius: 20px;
+.offense {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
   font-weight: bold;
-  width: fit-content;
+  text-align: center;
+  color: white;
+}
+
+.offense.warn {
+  background-color: orange;
+}
+
+.offense.kick {
+  background-color: gold;
+  color: black;
+}
+
+.offense.ban {
+  background-color: crimson;
 }
