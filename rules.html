@@ -2,45 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ISRP Rules</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    .rules-section {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 40px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .rule-box {
+      flex: 0 0 auto;
+      min-width: 300px;
+      padding: 20px;
+      border-radius: 16px;
+      scroll-snap-align: start;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .rule-box:hover {
+      transform: scale(1.05);
+    }
+
+    .warn {
+      background-color: #ffc107;
+    }
+
+    .kick {
+      background-color: #ff9800;
+    }
+
+    .ban {
+      background-color: #f44336;
+    }
+
+    .rule-box h3 {
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #d32f2f;
+    }
+  </style>
 </head>
-<body class="rules-page">
-  <div class="top-bar">
-    <a href="index.html" class="back-to-home">Back</a>
-  </div>
-  <header>ISRP Official Rules</header>
-  <div class="rules-container-horizontal">
-    <div class="rule-card">
-      <h2>RDM</h2>
-      <p>Deliberately harming another player without RP reason.</p>
-      <div class="offense warn">Warning</div>
-      <div class="offense kick">Kick</div>
-      <div class="offense ban">Ban</div>
-    </div>
+<body>
+  <a href="index.html" class="back-button">Back to Home</a>
 
-    <div class="rule-card">
-      <h2>VDM</h2>
-      <p>Using vehicles to attack or interfere without RP.</p>
-      <div class="offense warn">Warning</div>
-      <div class="offense kick">Kick</div>
-      <div class="offense ban">Ban</div>
+  <div class="rules-section">
+    <div class="rule-box warn">
+      <h3>1st Offense - Warning</h3>
+      <p>Minor rule violations such as mic spam or failure to follow basic procedures.</p>
     </div>
-
-    <div class="rule-card">
-      <h2>Green Zone Killing</h2>
-      <p>PvP in Safe Zones like PD/FD spawns.</p>
-      <div class="offense kick">Kick</div>
-      <div class="offense ban">Ban</div>
+    <div class="rule-box kick">
+      <h3>2nd Offense - Kick (30 Minutes)</h3>
+      <p>Repeated failure to comply with rules or inappropriate language.</p>
     </div>
-
-    <div class="rule-card">
-      <h2>Staff RDM</h2>
-      <p>Killing staff without cause or trolling them.</p>
-      <div class="offense kick">Kick</div>
-      <div class="offense ban">Ban</div>
+    <div class="rule-box ban">
+      <h3>3rd Offense - Ban</h3>
+      <p>Serious or continuous violations, harassment, or abuse of roleplay systems.</p>
     </div>
   </div>
 </body>
