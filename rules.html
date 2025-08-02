@@ -9,66 +9,87 @@
   <style>
     body {
       margin: 0;
-      background-color: #121212;
+      background: linear-gradient(135deg, #111 0%, #1c1c1c 100%);
       color: white;
       font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+      background-attachment: fixed;
     }
 
     .back-button {
       position: fixed;
       top: 20px;
       right: 20px;
-      background-color: #f44336;
+      background-color: #ff5252;
       color: white;
       border: none;
-      border-radius: 25px;
+      border-radius: 30px;
       padding: 10px 20px;
       font-weight: bold;
       cursor: pointer;
       text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       transition: background 0.3s;
       z-index: 1000;
     }
 
     .back-button:hover {
-      background-color: #d32f2f;
+      background-color: #e53935;
     }
 
-    .rules-wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    .rules-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 120px 20px 40px 20px;
+    }
+
+    .rule-row {
+      display: flex;
+      overflow-x: auto;
       gap: 20px;
-      padding: 120px 40px 40px 40px;
+      padding-bottom: 10px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .rule-row::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .rule-row::-webkit-scrollbar-thumb {
+      background: #555;
+      border-radius: 4px;
     }
 
     .rule-box {
-      background-color: #1f1f1f;
+      background: linear-gradient(145deg, #222, #2c2c2c);
+      min-width: 280px;
+      flex: 0 0 auto;
       padding: 20px;
-      border-radius: 16px;
-      color: white;
-      font-family: 'Roboto', sans-serif;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
-      position: relative;
+      border-radius: 18px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      scroll-snap-align: start;
+      transition: transform 0.3s, background 0.3s;
     }
 
     .rule-box:hover {
-      transform: scale(1.03);
+      transform: translateY(-5px);
+      background: linear-gradient(145deg, #333, #444);
     }
 
     .rule-box h3 {
       font-family: 'Playfair Display', serif;
       margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.3em;
+      font-size: 1.4em;
+      color: #4dd0e1;
     }
 
     .rule-box p {
       margin: 6px 0;
+      font-weight: bold;
     }
 
-    .warning { color: #ffc107; }
+    .warning { color: #ffeb3b; }
     .kick { color: #ff9800; }
     .ban { color: #f44336; }
   </style>
@@ -76,126 +97,37 @@
 <body>
   <a href="index.html" class="back-button">Back to Home</a>
 
-  <div class="rules-wrapper">
-    <div class="rule-box">
-      <h3>Fail Roleplay (FRP)</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick (30m)</p>
-      <p class="ban">3rd: Ban (1 Day)</p>
+  <div class="rules-container">
+    <div class="rule-row">
+      <div class="rule-box"><h3>Fail RP</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Ban 1d</p></div>
+      <div class="rule-box"><h3>RDM</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Ban 2d</p></div>
+      <div class="rule-box"><h3>VDM</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Ban 2d</p></div>
+      <div class="rule-box"><h3>Combat Logging</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Ban 1d</p></div>
+      <div class="rule-box"><h3>Cop Baiting</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Ban 1d</p></div>
     </div>
-    <div class="rule-box">
-      <h3>RDM (Random Deathmatch)</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (2 Days)</p>
+
+    <div class="rule-row">
+      <div class="rule-box"><h3>Breaking Character</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Ban 1d</p></div>
+      <div class="rule-box"><h3>FearRP</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Ban 1d</p></div>
+      <div class="rule-box"><h3>Metagaming</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Ban 2d</p></div>
+      <div class="rule-box"><h3>Powergaming</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Ban 2d</p></div>
+      <div class="rule-box"><h3>Trolling</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Ban 2d</p></div>
     </div>
-    <div class="rule-box">
-      <h3>VDM (Vehicle Deathmatch)</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (2 Days)</p>
+
+    <div class="rule-row">
+      <div class="rule-box"><h3>Staff Disrespect</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Ban 3d</p></div>
+      <div class="rule-box"><h3>Disrespecting Players</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Ban 3d</p></div>
+      <div class="rule-box"><h3>Exploiting</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Perm Ban</p></div>
+      <div class="rule-box"><h3>Unauthorized Mods</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Perm Ban</p></div>
+      <div class="rule-box"><h3>Spam</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Ban 1d</p></div>
     </div>
-    <div class="rule-box">
-      <h3>Combat Logging</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (1 Day)</p>
-    </div>
-    <div class="rule-box">
-      <h3>Cop Baiting</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (1 Day)</p>
-    </div>
-    <div class="rule-box">
-      <h3>Breaking Character</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (1 Day)</p>
-    </div>
-    <div class="rule-box">
-      <h3>FearRP</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (1 Day)</p>
-    </div>
-    <div class="rule-box">
-      <h3>Metagaming</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (2 Days)</p>
-    </div>
-    <div class="rule-box">
-      <h3>Powergaming</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (2 Days)</p>
-    </div>
-    <div class="rule-box">
-      <h3>Trolling</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (2 Days)</p>
-    </div>
-    <div class="rule-box">
-      <h3>Staff Disrespect</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (3 Days)</p>
-    </div>
-    <div class="rule-box">
-      <h3>Disrespecting Players</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (3 Days)</p>
-    </div>
-    <div class="rule-box">
-      <h3>Glitching or Exploiting</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (Perm)</p>
-    </div>
-    <div class="rule-box">
-      <h3>Unauthorized Mods</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (Perm)</p>
-    </div>
-    <div class="rule-box">
-      <h3>Spamming Chat/Mic</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (1 Day)</p>
-    </div>
-    <div class="rule-box">
-      <h3>Mic Abuse</h3>
-      <p class="warning">1st: Warning</p>
-      <p class="kick">2nd: Kick</p>
-      <p class="ban">3rd: Ban (1 Day)</p>
-    </div>
-    <div class="rule-box">
-      <h3>Advertising</h3>
-      <p class="warning">1st: Kick</p>
-      <p class="kick">2nd: Ban</p>
-      <p class="ban">3rd: Perm Ban</p>
-    </div>
-    <div class="rule-box">
-      <h3>NSFW/Offensive Content</h3>
-      <p class="warning">1st: Kick</p>
-      <p class="kick">2nd: Ban</p>
-      <p class="ban">3rd: Perm Ban</p>
-    </div>
-    <div class="rule-box">
-      <h3>Impersonation</h3>
-      <p class="warning">1st: Kick</p>
-      <p class="kick">2nd: Ban</p>
-      <p class="ban">3rd: Perm Ban</p>
-    </div>
-    <div class="rule-box">
-      <h3>DoXXing/Threats</h3>
-      <p class="warning">1st: Ban</p>
-      <p class="kick">2nd: Perm Ban</p>
-      <p class="ban">3rd: Blacklist</p>
+
+    <div class="rule-row">
+      <div class="rule-box"><h3>Mic Abuse</h3><p class="warning">1st: Warn</p><p class="kick">2nd: Kick</p><p class="ban">3rd: Ban 1d</p></div>
+      <div class="rule-box"><h3>Advertising</h3><p class="warning">1st: Kick</p><p class="kick">2nd: Ban</p><p class="ban">3rd: Perm Ban</p></div>
+      <div class="rule-box"><h3>NSFW Content</h3><p class="warning">1st: Kick</p><p class="kick">2nd: Ban</p><p class="ban">3rd: Perm Ban</p></div>
+      <div class="rule-box"><h3>Impersonation</h3><p class="warning">1st: Kick</p><p class="kick">2nd: Ban</p><p class="ban">3rd: Perm Ban</p></div>
+      <div class="rule-box"><h3>Threats/DoXXing</h3><p class="warning">1st: Ban</p><p class="kick">2nd: Perm Ban</p><p class="ban">3rd: Blacklist</p></div>
     </div>
   </div>
 </body>
